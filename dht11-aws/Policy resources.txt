@@ -1,0 +1,8 @@
+arn:aws:iot:region:account:thing/thing
+
+region: us-east-1
+account: 590184133085
+thing: ESP32_DHT11
+
+arn:aws:iot:us-east-1:590184133085:thing/ESP32_DHT11
+
