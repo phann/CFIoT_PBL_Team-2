@@ -1,6 +1,0 @@
-https://github.com/youjunjer/ESP32-MAX30102
-
-https://docs.sunfounder.com/projects/ultimate-sensor-kit/en/latest/fun_project/06-fun_Heart_rate_monitor.html
-
-https://www.instructables.com/Heart-Rate-and-Blood-Oxygen-Level-With-Arduino-IDE/
-
