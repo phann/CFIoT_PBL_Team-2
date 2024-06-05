@@ -10,8 +10,8 @@
 ## Setup for Server (Linux, Nginx, Mysql, PHP)
 Installation refers to "Command History.txt"
 - Install Nginx
-- Install mysql
-  Create user admin for mysql database
+- Install mysql,
+  create user admin for mysql database
   ```bash
   CREATE USER 'admin'@'%' IDENTIFIED BY 'cfiot2J@y@';
   GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
