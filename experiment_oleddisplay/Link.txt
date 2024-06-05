@@ -1,2 +1,0 @@
-https://www.youtube.com/watch?v=7XdNR2ou_-g
-https://srituhobby.com/how-to-use-oled-displays-with-esp32-boards/#google_vignette
