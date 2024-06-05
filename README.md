@@ -1,4 +1,4 @@
-# CFIoT_PBL_Team-2
+# Your Sleeping Assistant (CFIoT_PBL_Team-2)
 
 ## Setup for AWS Service
 refers to "oleddis-max30102-aws/Link.txt"
