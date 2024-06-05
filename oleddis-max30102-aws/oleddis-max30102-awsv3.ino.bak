@@ -9,6 +9,7 @@
 
 //http communication protocol
 #include <HTTPClient.h>
+
 #include <Adafruit_GFX.h>    //OLED libraries
 #include <Adafruit_SSD1306.h> //OLED libraries
 #include "MAX30105.h"           //MAX3010x library
@@ -128,15 +129,6 @@ void connectAWS()
   Serial.println("AWS IoT Connected!");
 }
 
-int dataState = LOW;  // ledState used to set the LED
-
-// Generally, you should use "unsigned long" for variables that hold time
-// The value will quickly become too large for an int to store
-unsigned long previousMillis = 0;  // will store last time LED was updated
-
-// constants won't change:
-const long interval = 200;  // interval at which to blink (milliseconds)
-
 // void publishMessage()
 // {
 //   Serial.print("On this part");
@@ -168,7 +160,7 @@ int Tonepin = 4; //蜂鳴器腳位
 
 void setup() {
   Serial.begin(115200);
-  // connectAWS();
+  connectAWS();
   Serial.println("System Start");
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C); //Start the OLED display
   display.display();
@@ -192,23 +184,21 @@ void setup() {
 
   particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
   particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
-  connectAWS(); 
 }
 
 void loop() {
-  unsigned long currentMillis = millis();
-  
   long irValue = particleSensor.getIR();    //Reading the IR value it will permit us to know if there's a finger on the sensor or not
-  //是否有放手指
-
-    // Create an HTTPClient object
+  
+  // Create an HTTPClient object
   HTTPClient http;
 
   // Specify the server address and the content type
   http.begin(serverAddress);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
+  
+  //是否有放手指
   if (irValue > FINGER_ON ) {
+    
     //檢查是否有心跳，測量心跳
     if (checkForBeat(irValue) == true) {
       //心跳動畫
@@ -297,23 +287,15 @@ void loop() {
     doc["t"] = myTime;
     char jsonBuffer[512];
     serializeJson(doc, jsonBuffer); // print to client
-    if (beatAvg > 60){
-      if (currentMillis - previousMillis >= interval) {
-      previousMillis = currentMillis;
+    
+	// Create the POST data string
+    String postData = "beat=" + String(beatAvg) + "&espo2=" + String(ESpO2) + "&time=" + String(myTime);
+    // Send the POST request
+    int httpResponseCode = http.POST(postData);
 
-      // if the LED is off turn it on and vice-versa:
-        if (dataState == LOW) {
-          dataState = HIGH;
-        } else {
-          dataState = LOW;
-          Serial.println("Sending the data");
-          client.publish(AWS_IOT_PUBLISH_TOPIC, jsonBuffer);String postData = "beat=" + String(beatAvg) + "&espo2=" + String(ESpO2) + "&time=" + String(myTime);
-      // Send the POST request
-          int httpResponseCode = http.POST(postData);
-        }
-      } 
+    delay(1);
+    client.publish(AWS_IOT_PUBLISH_TOPIC, jsonBuffer);
     }
-  }
     // publishMessage(); //connect to aws
     
   //沒偵測到手指，清除所有數據及螢幕內容顯示"Finger Please"
