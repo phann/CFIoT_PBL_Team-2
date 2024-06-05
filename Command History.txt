@@ -61,14 +61,6 @@ ls -l
 mv *.php /var/www/html/esp32dht22toweb/
 179  cd wordpress/wp-content/themes/twentytwentyfour/
 sudo cp functions.php /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp /js /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp -r /js /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp -r js/ /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp functions.php /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp -r js/ /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp functions.php /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp -r js/ /var/www/html/wp-content/themes/twentytwentyfour/
-sudo cp functions.php /var/www/html/wp-content/themes/twentytwentyfour/
 sudo cp -r js/ /var/www/html/wp-content/themes/twentytwentyfour/
 sudo cp functions.php /var/www/html/wp-content/themes/twentytwentyfour/
 sudo cp style.css /var/www/html/wp-content/themes/twentytwentyfour/
