@@ -6,8 +6,14 @@ https://www.instructables.com/Heart-Rate-and-Blood-Oxygen-Level-With-Arduino-IDE
 
 =====
 
-ESP32 - AWS
+ESP32 - AWS IoT Core
 https://www.hackster.io/mafzal/esp32-aws-iot-core-e6c274
 
 ESP32(DHT11) - AWS
 https://how2electronics.com/connecting-esp32-to-amazon-aws-iot-core-using-mqtt/#google_vignette
+
+
+========
+
+Connect to dynamoDB
+https://github.com/dejes/CFIoT_PBL_Team-2-oleddis-max30102-aws
