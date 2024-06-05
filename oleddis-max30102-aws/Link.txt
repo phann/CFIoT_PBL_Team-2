@@ -4,3 +4,10 @@ https://docs.sunfounder.com/projects/ultimate-sensor-kit/en/latest/fun_project/0
 
 https://www.instructables.com/Heart-Rate-and-Blood-Oxygen-Level-With-Arduino-IDE/
 
+=====
+
+ESP32 - AWS
+https://www.hackster.io/mafzal/esp32-aws-iot-core-e6c274
+
+ESP32(DHT11) - AWS
+https://how2electronics.com/connecting-esp32-to-amazon-aws-iot-core-using-mqtt/#google_vignette
