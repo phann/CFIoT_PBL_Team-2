@@ -1,7 +1,7 @@
 # Your Sleeping Assistant (CFIoT_PBL_Team-2)
 
 ## Setup for AWS Service
-refers to "oleddis-max30102-aws/Link.txt"
+Setup refers to "oleddis-max30102-aws/Link.txt"
 - create an AWS account
 - create IoT Core Service
 - create EC2 Instance (Ubuntu 20.0) 30 GB Free Storage
