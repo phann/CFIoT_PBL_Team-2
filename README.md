@@ -11,6 +11,7 @@
 Installation refers to "Command History.txt"
 - Install Nginx
 - Install mysql
+  Create user admin for mysql database
   ```bash
   CREATE USER 'admin'@'%' IDENTIFIED BY 'cfiot2J@y@';
   GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
@@ -22,6 +23,3 @@ Installation refers to "Command History.txt"
 ### Deploy for web application
 - Deploy database from "cfiot_team2.sql"
 - Deploy Wordpress from "wordpress-cfiot.zip", and replace existing installation
-  
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
