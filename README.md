@@ -1,13 +1,27 @@
 # CFIoT_PBL_Team-2
 
-# Project Name
+## Setup for AWS Service
+- create an AWS account
+- create IoT Core Service
+- create EC2 Instance (Ubuntu 20.0) 30 GB Free Storage
+- create Elastic IP for EC2 Instance
+- create DynamoDB
 
-## Introduction
-Welcome to the **Project Name** repository! This project aims to [describe the purpose and functionality of your project]. Below, you'll find detailed instructions on how to set up and use the project.
+## Setup for Server (Linux, Nginx, Mysql, PHP)
+Installation refers to "Command History.txt"
+- Install Nginx
+- Install mysql
+  ```bash
+  CREATE USER 'admin'@'%' IDENTIFIED BY 'cfiot2J@y@';
+  GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+  FLUSH PRIVILEGES;
+- Install PHP & PHPmyadmin
+- Install PHP Composer
+- Install Wordpress
 
-## Installation
-To get started, clone the repository and install the required dependencies.
-
-### Clone the repository
+### Deploy for web application
+- Deploy database from "cfiot_team2.sql"
+- Deploy Wordpress from "wordpress-cfiot.zip", and replace existing installation
+  
 ```bash
 git clone https://github.com/yourusername/your-repo-name.git
